@@ -1,0 +1,239 @@
+<html>
+<!-- Head tag -->
+<head>
+  <meta charset="UTF-8">
+
+  
+  <title>
+    Audio Programming with C++ and VCV Rack |
+    ZeroLab
+  </title>
+  
+
+
+  <meta name="description" content="">
+  <meta name="author" content="Daniel Billotte">
+  <meta property="og:title" content="Audio Programming with C++ and VCV Rack" />
+  <meta property="og:description" content="" />
+  <meta property='og:site_name' content='ZeroLab' />
+  <meta property="og:image" content="http://dgbillotte.com/img/default.jpg" />
+  <!-- <meta name="twitter:card" content="summary" /> -->
+  <!-- <meta name="twitter:description" content="" /> -->
+  <!-- <meta name="twitter:title" content="Audio Programming with C++ and VCV Rack" /> -->
+
+  <!-- <meta name="twitter:image" content="http://dgbillotte.com/img/default.jpg" /> -->
+
+  <script src="https://www.amcharts.com/lib/4/core.js"></script>
+  <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+  <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+    crossorigin="anonymous">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/css/style-zl.css">
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+    <!-- Menu -->
+    <nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-dark page-navbar gradient">
+  <div class="container">
+    <a class="navbar-brand logo" href="http://dgbillotte.com">
+      ZeroLab</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item item">
+          
+        <li class="nav-item item">
+          <a class="nav-link" href="/">
+            Home</a>
+        </li>
+        
+        <li class="nav-item item">
+          <a class="nav-link" href="/archives">
+            🗂️Archives</a>
+        </li>
+        
+        <li class="nav-item item">
+          <a class="nav-link" target="_blank" rel="noopener" href="https://hexo.io/">
+            Hexo</a>
+        </li>
+        
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <main class="page main-page">
+        <div class="container blogPost">
+    <div class="row">
+        <div class="col-sm-9 px-md-5">
+            <h2 class="blog-post-title">
+                Audio Programming with C++ and VCV Rack
+            </h2>
+            <p class="meta">
+                <i class="far fa-clock"></i>
+                2021-08-29 
+            </p>
+            <!-- Content -->
+            <!-- # Audio Programming with C++ and VCV Rack -->
+
+
+<img src="./post2-patch.jpg" alt="Screen capture of VCV Rack patch">
+
+<!-- <img src="/2021/08/29/Audio-Programming-with-C-and-VCV-Rack/post2-patch.jpg" class="header-mg" width="1000"> -->
+
+<hr>
+<p>Are you curious about programming a computer to make music or other strange sounds? Or maybe you’re a seasoned pro that wants to get up to speed with the VCV Rack environment? Either way, you’ve stumbled into a better than bad place.</p>
+<p>This article is the first in what will be an ongoing series about audio programming. The first handful of articles will be intended for those who are newer to audio programming but we will progress into much more interesting waters as we go. You can do all kinds of cool stuff with Rack (<a target="_blank" rel="noopener" href="https://bandcamp.com/tag/vcv-rack">link</a>, <a target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=vcv+rack+jams">link</a>, <a target="_blank" rel="noopener" href="https://patchstorage.com/platform/vcv-rack/">link</a>, <a target="_blank" rel="noopener" href="https://www.youtube.com/c/OmriCohen-Music/videos">let Omri show you</a>), but for our purposes at hand, it gives you a very nice laboratory in which to learn the ways of audio-programming and perform experiments in the arts of DSP wizardry.</p>
+<p>In this article we will:</p>
+<ul>
+<li>See why VCV Rack is a great environment for experimenting</li>
+<li>Install VCV Rack</li>
+<li>Setup your development/build environment</li>
+<li>Build and test a module in VCV Rack</li>
+</ul>
+<p>In the next article we will start looking at the code…</p>
+<h3 id="What-is-VCV-Rack-and-why-is-it-the-perfect-audio-lab"><a href="#What-is-VCV-Rack-and-why-is-it-the-perfect-audio-lab" class="headerlink" title="What is VCV Rack and why is it the perfect audio lab?"></a>What is VCV Rack and why is it the perfect audio lab?</h3><p><a target="_blank" rel="noopener" href="https://vcvrack.com/">VCV Rack</a> is an open-source (free!) virtual <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Eurorack">eurorack</a> <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Modular_synthesizer">modular synthesizer</a>. It has an open <a target="_blank" rel="noopener" href="https://library.vcvrack.com/">plugin library</a> that hosts, as of today, 2,664 modules and it is pretty easy to write your own modules for it.</p>
+<h4 id="The-perfect-lab"><a href="#The-perfect-lab" class="headerlink" title="The perfect lab?"></a>The perfect lab?</h4><ol>
+<li>It is complete<ul>
+<li>From a synthesizer perspective:<ul>
+<li>It has all of the core components of most systems ever made. period!</li>
+</ul>
+</li>
+<li>From a lab / experimentation perspective:<ul>
+<li><img src="./spectrum-analysis.png" alt="Screen capture of VCV Rack patch"> </li>
+<li>It has visual analysis tools that can be used to measure and see what your code is doing: o-scopes, signal/logic analyzers, spectrum analyzers. I’ve had cases where there was a slight transient in my waveform that I didn’t see in the o-scope, but it was clear as day on the spectrum analyzer.</li>
+<li>It has function generators / oscillators that can be used as known test inputs to see how your module reacts to different waveforms and frequencies.</li>
+<li>There is quite a bit of DSP, MIDI, and other audio framework built into the core Rack libraries, so you don’t have to write it yourself or you have good examples to learn from.</li>
+<li>There are many plugins for reading/writing audio to the file system so you can use any materials you have and capture anything you create</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>It is free! Feel free to contribute $ or bug-fixes to Rack itself or one of the many module makers…</li>
+<li>It is a great collection of existing code to experiment with and learn from.</li>
+</ol>
+<h3 id="Install-VCV-Rack"><a href="#Install-VCV-Rack" class="headerlink" title="Install VCV Rack"></a>Install VCV Rack</h3><p>The <a target="_blank" rel="noopener" href="https://vcvrack.com/manual/">VCV Rack Manual</a> is pretty complete and always getting better. The <a target="_blank" rel="noopener" href="https://vcvrack.com/manual/Installing">installation page</a> has the program requirements and detailed installation instructions, but it boils down to:</p>
+<ul>
+<li>Download <a target="_blank" rel="noopener" href="https://vcvrack.com/Rack">VCV Rack</a></li>
+<li>Install it:<ul>
+<li>OSX: unzip and copy to Applications folder</li>
+<li>Linux: unzip and put it where ever</li>
+<li>Windows: run the installer</li>
+</ul>
+</li>
+<li>(Optional) Create an account for the <a target="_blank" rel="noopener" href="https://library.vcvrack.com/">VCV Library</a></li>
+<li>Run Rack with the shortcut icon, where-ever those go on your system, or from the command line</li>
+<li>(Optional) Once you are in VCV Rack, login to the VCV Library from the Library menu item</li>
+<li>Start playing, or at least make sure you can make sound</li>
+</ul>
+<h3 id="Setup-Your-Development-Environment"><a href="#Setup-Your-Development-Environment" class="headerlink" title="Setup Your Development Environment"></a>Setup Your Development Environment</h3><p>This doesn’t speak to the editor or terminal/shell program you use, so it really should be called “Setup Your Build Environment” where we will install all the needed build tools, libraries, and the Rack SDK.</p>
+<h4 id="Install-Build-Tools"><a href="#Install-Build-Tools" class="headerlink" title="Install Build Tools"></a>Install Build Tools</h4><p>Follow the <a target="_blank" rel="noopener" href="https://vcvrack.com/manual/Building">guide</a> in the manual to install the necessary build tools and libraries for your development system. You can stop when you get to the section labeled “Building Rack”.</p>
+<h4 id="Install-VCV-Rack-SDK"><a href="#Install-VCV-Rack-SDK" class="headerlink" title="Install VCV Rack SDK"></a>Install VCV Rack SDK</h4><p>Download the latest <a target="_blank" rel="noopener" href="https://vcvrack.com/downloads/">Rack SDK</a> (it was 1.1.6 as of this writing) and unzip it to a directory of your choosing, let’s call this <MY_RACKSDK_DIR>.</p>
+<h4 id="Set-the-RACK-DIR-environment-var"><a href="#Set-the-RACK-DIR-environment-var" class="headerlink" title="Set the $RACK_DIR environment var"></a>Set the $RACK_DIR environment var</h4><pre class="line-numbers language-none"><code class="language-none">export RACK_DIR&#x3D;&#39;&lt;MY_RACKSDK_DIR&gt;&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>You will probably want to add that to your shell config file (.zshrc, .bashrc, …) after you type it a couple times…</p>
+<p>With that you are ready to test out your build system.</p>
+<h4 id="Test-Your-Development-Environment"><a href="#Test-Your-Development-Environment" class="headerlink" title="Test Your Development Environment"></a>Test Your Development Environment</h4><p>To test out your environment you’ll need to build a plugin. You can build either, or both of:</p>
+<ul>
+<li>the VCV Rack Fundamental plugin. Just follow the <a target="_blank" rel="noopener" href="https://vcvrack.com/manual/Building#Building-Rack-plugins">instructions</a> in the manual</li>
+<li>build my <a target="_blank" rel="noopener" href="https://github.com/dgbillotte/HelloVCV">HelloVCV</a> plugin like this:</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token operator">></span> <span class="token comment"># assuming that $RACK_DIR is set</span>
+<span class="token operator">></span> <span class="token function">git</span> clone git@github.com:dgbillotte/HelloVCV.git
+<span class="token operator">></span> <span class="token builtin class-name">cd</span> HelloVCV
+<span class="token operator">></span> <span class="token function">make</span> <span class="token function">install</span>
+<span class="token operator">></span> rack <span class="token comment"># or however you start VCV-Rack</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>Building HelloVCV is two steps quicker and will leave you with a simple and thoroughly documented module that you can use as a template to start playing with right away.</p>
+<p>The Fundamental modules, on the other hand, are great examples of all kinds of techniques used in real-world DSP programming, but as such, are more complex and more difficult to digest at first.</p>
+<p>If you start with HelloVCV, I highly encourage you to come back to the Fundamental modules in the future as they are a great model of the “VCV Rack” way of coding. The entire library of modules provides for great code reading.</p>
+<p>Once the plugin is built and Rack is running, add one of your test modules from the plugin to the on-screen rack and test it out.</p>
+<h3 id="Start-Playing…"><a href="#Start-Playing…" class="headerlink" title="Start Playing…"></a>Start Playing…</h3><p>If everything has worked, you now have a working audio-programming development laboratory. Go open up the HelloVCV.cpp file in <a target="_blank" rel="noopener" href="https://github.com/dgbillotte/HelloVCV/blob/main/src/VCO.cpp">my plugin</a> or one of the module files in Fundamental and see what happens if you change stuff… Speaking of playing, while I was writing this I got carried away in Rack and made this:</p>
+<audio controls="controls" src="post2-vcv-patch.ogg">
+  Your browser doesn't support HTML5 audio :-(
+</audio>
+
+<h3 id="Up-Next…"><a href="#Up-Next…" class="headerlink" title="Up Next…"></a>Up Next…</h3><p>In the next article I will go over:</p>
+<ul>
+<li>the main components you have to work with in Rack</li>
+<li>creating a plugin with the helper.py script</li>
+<li>and who knows what else</li>
+</ul>
+<p>cheers,<br>Daniel</p>
+
+            <br />
+            <p class="meta">
+                
+            </p>
+        </div>
+
+        <div class="col-sm-3">
+             
+
+        </div>
+    </div>
+</div>
+<!-- Menu fade on scroll -->
+<script>
+    var isScrolling;
+    var prevScrollpos = window.pageYOffset;
+    window.addEventListener(
+        'scroll',
+        function(event) {
+            window.clearTimeout(isScrolling);
+            isScrolling = setTimeout(function() {
+                var currentScrollPos = window.pageYOffset;
+                if (prevScrollpos > currentScrollPos) {
+                    $('#navbar').slideDown();
+                } else {
+                    $('#navbar').slideUp();
+                }
+                prevScrollpos = currentScrollPos;
+            }, 66);
+        },
+        false
+    );
+</script>
+
+
+<a class="float-left gradient btn paginationbtn" href="/2021/08/08/Breaking-Ground/"><i class="fas fa-chevron-left"></i></a>
+
+
+    </main>
+    <!-- Footer -->
+    <footer class="page-footer">
+  <div class="container">
+    <div class="social-icons">
+      
+      <a href="https://hexo.io/" title="Hexo.io" target="_blank" rel="noopener" class="fas fa-home"></a>
+      
+      <a href="https://twitter.com/hexojs" title="@hexojs" target="_blank" rel="noopener" class="fab fa-twitter"></a>
+      
+      <a href="https://github.com/RandomAdversary/Gradient/issues" title="Report issue" target="_blank" rel="noopener" class="fas fa-bug"></a>
+      
+    </div>
+  </div>
+</footer>
+    <!-- After footer scripts -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

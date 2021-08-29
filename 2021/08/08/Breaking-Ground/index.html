@@ -17,11 +17,11 @@
   <meta property="og:description" content="" />
   <meta property='og:site_name' content='ZeroLab' />
   <meta property="og:image" content="http://dgbillotte.com/img/default.jpg" />
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:description" content="" />
-  <meta name="twitter:title" content="Breaking Ground, part Deux" />
+  <!-- <meta name="twitter:card" content="summary" /> -->
+  <!-- <meta name="twitter:description" content="" /> -->
+  <!-- <meta name="twitter:title" content="Breaking Ground, part Deux" /> -->
 
-  <meta name="twitter:image" content="http://dgbillotte.com/img/default.jpg" />
+  <!-- <meta name="twitter:image" content="http://dgbillotte.com/img/default.jpg" /> -->
 
   <script src="https://www.amcharts.com/lib/4/core.js"></script>
   <script src="https://www.amcharts.com/lib/4/charts.js"></script>
@@ -33,6 +33,9 @@
     crossorigin="anonymous">
   
 <link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/css/style-zl.css">
 
 
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -96,7 +99,43 @@ decided to give it a try.
 <p>Here's the first post, just for my memory :-)</p>
 
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select title, plaintext, published_at from posts where slug = &#x27;breaking-ground&#x27; \G</span><br><span class="line">*************************** 1. row ***************************</span><br><span class="line">    title: Breaking Ground!</span><br><span class="line"></span><br><span class="line">    plaintext: Hello. Today is the first day of a new project. I can&#x27;t tell you much about it</span><br><span class="line">    because it is still crystalizing in my brain, but I can tell you a little about</span><br><span class="line">    me and what I&#x27;ve crystalized thus far. I&#x27;ve been swirling some ideas around in</span><br><span class="line">    my head for quite a while, but I&#x27;ve been stuck in &quot;planning mode&quot; and haven&#x27;t</span><br><span class="line">    gotten anything done. This post is my &quot;stick in the ground&quot; to declare that so</span><br><span class="line">    called &quot;planning-mode&quot; is over, forever, and that it is time for GO-mode, even</span><br><span class="line">    if I don&#x27;t totally know where I&#x27;m going...</span><br><span class="line"></span><br><span class="line">    As of today, my project is called &quot;ZeroLab&quot;. Why? Because I like math/numbers</span><br><span class="line">    and feel like my life is a laboratory of non-stop experiments, some of them more</span><br><span class="line">    planned out than others. However, the zerolab.com domain is not available,</span><br><span class="line">    without an extortion fee, and I&#x27;m not sure if I want to pay that fee and I don&#x27;t</span><br><span class="line">    even know if I really like &quot;zerolab&quot;, like forever, there&#x27;s probably a better</span><br><span class="line">    name that I would LOVE and has a freely available domain name and more and more</span><br><span class="line">    excuses to NOT get started RIGHT NOW!</span><br><span class="line"></span><br><span class="line">    So, ZeroLab it is, hosted on dgbillotte.com (because I already had that domain)</span><br><span class="line">    and who knows, it will probably all change as we go, but today is day #1.</span><br><span class="line"></span><br><span class="line">    With that out of the way, the primary topic I will be getting into is &quot;the</span><br><span class="line">    creation/synthesis of music/audio/noise with acoustic, analog, and digital means</span><br><span class="line">    from a DIY perspective&quot;, but you could also see stuff about the great outdoors,</span><br><span class="line">    pedestrians, bicycles, cutting boards, or old trucks. I spent 10 minutes trying</span><br><span class="line">    to get that previous sentence &quot;right&quot; and I still don&#x27;t like it, but I realized</span><br><span class="line">    I had more important things to work on, like all those design things (themes,</span><br><span class="line">    fonts, colors, navigation, engaging visuals, etc) and the real work of creating</span><br><span class="line">    useful engaging content.</span><br><span class="line"></span><br><span class="line">    Please come back and join the adventure, I gotta GO!</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    published_at: 2021-07-26 20:52:27</span><br><span class="line">    1 row in set (0.00 sec)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">mysql&gt; select title, plaintext, published_at from posts where slug &#x3D; &#39;breaking-ground&#39; \G
+*************************** 1. row ***************************
+    title: Breaking Ground!
+
+    plaintext: Hello. Today is the first day of a new project. I can&#39;t tell you much about it
+    because it is still crystalizing in my brain, but I can tell you a little about
+    me and what I&#39;ve crystalized thus far. I&#39;ve been swirling some ideas around in
+    my head for quite a while, but I&#39;ve been stuck in &quot;planning mode&quot; and haven&#39;t
+    gotten anything done. This post is my &quot;stick in the ground&quot; to declare that so
+    called &quot;planning-mode&quot; is over, forever, and that it is time for GO-mode, even
+    if I don&#39;t totally know where I&#39;m going...
+
+    As of today, my project is called &quot;ZeroLab&quot;. Why? Because I like math&#x2F;numbers
+    and feel like my life is a laboratory of non-stop experiments, some of them more
+    planned out than others. However, the zerolab.com domain is not available,
+    without an extortion fee, and I&#39;m not sure if I want to pay that fee and I don&#39;t
+    even know if I really like &quot;zerolab&quot;, like forever, there&#39;s probably a better
+    name that I would LOVE and has a freely available domain name and more and more
+    excuses to NOT get started RIGHT NOW!
+
+    So, ZeroLab it is, hosted on dgbillotte.com (because I already had that domain)
+    and who knows, it will probably all change as we go, but today is day #1.
+
+    With that out of the way, the primary topic I will be getting into is &quot;the
+    creation&#x2F;synthesis of music&#x2F;audio&#x2F;noise with acoustic, analog, and digital means
+    from a DIY perspective&quot;, but you could also see stuff about the great outdoors,
+    pedestrians, bicycles, cutting boards, or old trucks. I spent 10 minutes trying
+    to get that previous sentence &quot;right&quot; and I still don&#39;t like it, but I realized
+    I had more important things to work on, like all those design things (themes,
+    fonts, colors, navigation, engaging visuals, etc) and the real work of creating
+    useful engaging content.
+
+    Please come back and join the adventure, I gotta GO!
+
+
+    published_at: 2021-07-26 20:52:27
+    1 row in set (0.00 sec)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
             <br />
             <p class="meta">
                 
@@ -132,6 +171,8 @@ decided to give it a try.
 </script>
 
 
+
+<a class="float-right gradient btn paginationbtn" href="/2021/08/29/Audio-Programming-with-C-and-VCV-Rack/"><i class="fas fa-chevron-right"></i></a>
 
     </main>
     <!-- Footer -->
