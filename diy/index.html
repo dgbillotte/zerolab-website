@@ -82,50 +82,70 @@
 </nav>
 
     <main class="page main-page">
-        
+        <div class="container blogPost">
+    <div class="row">
+        <div class="col-sm-9 px-md-5">
+            <h2 class="blog-post-title">
+                
+            </h2>
+            <p class="meta">
+                <i class="far fa-clock"></i>
+                2021-08-31 
+            </p>
+            <!-- Content -->
+            <h2 id="DIY-Stuff-How-To’s-References-and-Killer-Links"><a href="#DIY-Stuff-How-To’s-References-and-Killer-Links" class="headerlink" title="DIY Stuff : How-To’s, References, and Killer Links"></a>DIY Stuff : How-To’s, References, and Killer Links</h2><h3 id="Analog-Audio-Electronics"><a href="#Analog-Audio-Electronics" class="headerlink" title="Analog Audio Electronics"></a>Analog Audio Electronics</h3><h4 id="Places-to-learn-stuff"><a href="#Places-to-learn-stuff" class="headerlink" title="Places to learn stuff"></a>Places to learn stuff</h4><h4 id="Places-to-buy-stuff"><a href="#Places-to-buy-stuff" class="headerlink" title="Places to buy stuff"></a>Places to buy stuff</h4><h1 id="Work-in-progress-broken-links-and-other-messed-up-stuff-abound"><a href="#Work-in-progress-broken-links-and-other-messed-up-stuff-abound" class="headerlink" title="Work in progress, broken links and other messed up stuff abound!"></a>Work in progress, broken links and other messed up stuff abound!</h1><h3 id="Audio-Programming"><a href="#Audio-Programming" class="headerlink" title="Audio Programming"></a>Audio Programming</h3><h4 id="Places-to-learn-stuff-1"><a href="#Places-to-learn-stuff-1" class="headerlink" title="Places to learn stuff"></a>Places to learn stuff</h4><h4 id="Killer-tools"><a href="#Killer-tools" class="headerlink" title="Killer tools"></a>Killer tools</h4><ul>
+<li><p><a href="">Audacity</a></p>
+</li>
+<li><p><a href="">Pd</a></p>
+</li>
+<li><p><a href="">SuperCollider</a></p>
+</li>
+<li><p><a href="">TidalCycles</a></p>
+</li>
+<li><p><a href="">VCV Rack</a></p>
+</li>
+<li><p><a href="">Inkscape</a></p>
+</li>
+<li><p><a href="">KiCAD</a></p>
+</li>
+<li><p><a href="">Arduino</a></p>
+</li>
+</ul>
 
-<div class="title">
-    <h2>
-        Archives
-    </h2>
-</div>
+            <br />
+            <p class="meta">
+                
+            </p>
+        </div>
 
+        <div class="col-sm-3">
+             
 
-<div class="band">
-    
-    <div class="item-01">
-  <a href="/2021/08/29/Audio-Programming-with-C-and-VCV-Rack/" class="post">
-    <div class="thumb" style="background-image: url(/2021/08/29/Audio-Programming-with-C-and-VCV-Rack/post2-patch.jpg);"></div>
-    <article>
-      <h1>
-        Audio Programming with C++ and VCV Rack
-      </h1>
-      <p>
-        
-      </p>
-      <span>
-        2021-08-29</span>
-    </article>
-  </a>
+        </div>
+    </div>
 </div>
-    
-    <div class="item-02">
-  <a href="/2021/08/08/Breaking-Ground/" class="post">
-    <div class="thumb" style="background-image: url(/2021/08/08/Breaking-Ground/235-no-valve-cover.jpg);"></div>
-    <article>
-      <h1>
-        Breaking Ground, part Deux
-      </h1>
-      <p>
-        
-      </p>
-      <span>
-        2021-08-08</span>
-    </article>
-  </a>
-</div>
-    
-</div>
+<!-- Menu fade on scroll -->
+<script>
+    var isScrolling;
+    var prevScrollpos = window.pageYOffset;
+    window.addEventListener(
+        'scroll',
+        function(event) {
+            window.clearTimeout(isScrolling);
+            isScrolling = setTimeout(function() {
+                var currentScrollPos = window.pageYOffset;
+                if (prevScrollpos > currentScrollPos) {
+                    $('#navbar').slideDown();
+                } else {
+                    $('#navbar').slideUp();
+                }
+                prevScrollpos = currentScrollPos;
+            }, 66);
+        },
+        false
+    );
+</script>
+
 
 
     </main>
