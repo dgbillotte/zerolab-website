@@ -57,38 +57,88 @@
 
 <body>
     <!-- Menu -->
-    <nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-dark page-navbar gradient">
-  <div class="container">
-    <a class="navbar-brand logo" href="http://dgbillotte.com">
-      ZeroLab</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
-      aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
+    <style>
+  .navbar {
+    padding: 0;
+  }
+  
+  .zl-header {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 0;
+    background-image: url("/img/bw-expando.png");
+    background-size: 5px 130px;
+  }
+
+  .zl-spacer-block {
+    flex-grow: 0;
+    width: 4em;
+    height: 130px;
+    background: black; 
+  }
+  
+  .zl-logo-block {
+    flex-grow: 0;
+  }
+  
+  .zl-logo-block .logo {
+    margin: 0;
+    padding: 0;
+  }
+  .zl-logo-block .logo img {
+    height: 130px;
+  }
+
+  .zl-menu-block {
+    flex-grow: 1;
+    align-self: flex-start;
+    margin-right: 4em;
+  }
+  
+  .page-navbar.navbar-dark .navbar-nav .nav-link {
+    color: #000;
+  }
+  
+  .navbar-nav {
+    justify-content: flex-end;
+  }
+  
+  /* To offset the main content down. Fix this */
+  .page-navbar.fixed-top + .page {
+    padding-top: 90px;
+  }
+
+</style>
+
+<nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-dark page-navbar gradient">
+
+  <div class="zl-header container-fluid">
+    <div class="zl-spacer-block">&nbsp;</div>
+    <div class="zl-logo-block"><a class="navbar-brand logo" href="http://dgbillotte.com"><img src="/img/zerolab-logo-bwo.png"></a></div>
+    
+    <div class="zl-menu-block">
+      <!-- <div class="collapse navbar-collapse" id="navbarNav"></div> -->
       <ul class="navbar-nav mx-auto">
+        
         <li class="nav-item item">
-          
-        <li class="nav-item item">
-          <a class="nav-link" href="/about">
-            About</a>
+          <a class="nav-link" href="/about">About</a>
         </li>
         
         <li class="nav-item item">
-          <a class="nav-link" href="/projects">
-            Projects</a>
+          <a class="nav-link" href="/projects">Projects</a>
         </li>
         
         <li class="nav-item item">
-          <a class="nav-link" href="/diy">
-            DIY</a>
+          <a class="nav-link" href="/diy">DIY</a>
         </li>
         
-        </li>
       </ul>
     </div>
   </div>
+
 </nav>
+
 
     <main class="page main-page">
         <div class="container blogPost">
